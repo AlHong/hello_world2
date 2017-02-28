@@ -1,0 +1,22 @@
+language: python
+
+#which versions of python to test against
+python:
+  - "2.7"
+  - "3.3"
+
+# command to install dependencies
+install:
+  - pip install codecov
+  - pip install coverage
+
+#  - pip install ./lecture7/
+#  - pip install -r ./lecture7/requirements.txt
+
+script: 
+  - python -m unittest discover -v ./lecture7/ # command to run unit test
+  - coverage run ./lecture7/test.py # command to run code coverage
+
+#can do additional things, say send out reports, which we will discuss next time
+after_success:
+  - codecov --token= bbd4ad01-f3c4-4147-8460-49c3ccfb3d1a # upload coverage report to codecov.io
