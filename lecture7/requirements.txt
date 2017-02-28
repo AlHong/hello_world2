@@ -1,0 +1,3 @@
+#this file contains a list of packages needed to run the project. Currently we do not have any, sample packages are commented out
+#Django==1.3
+#Fabric==1.2.0
